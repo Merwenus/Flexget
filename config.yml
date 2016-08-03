@@ -1,0 +1,427 @@
+web_server:
+  bind: 0.0.0.0
+  port: 5050
+api: yes
+webui: yes
+
+#    manipulate:
+#      - title: &the
+#          replace:
+#            regexp: '^The\W'
+#            format: ''
+#      - filename: *the
+#      - series_name: *the
+
+secrets: secrets.yml
+
+# /volume1/@appstore/flexget/env/bin/flexget -c /volume1/@appstore/flexget/var/config.yml --test execute
+
+# /volume1/@appstore/flexget/env/bin/flexget -c /volume1/@appstore/flexget/var/config.yml daemon start -d
+# /volume1/@appstore/flexget/env/bin/flexget -c /volume1/@appstore/flexget/var/config.yml daemon stop -d
+# /volume1/@appstore/flexget/env/bin/flexget -c /volume1/@appstore/flexget/var/config.yml daemon reload -d
+# /volume1/@appstore/flexget/env/bin/flexget -c /volume1/@appstore/flexget/var/config.yml -L verbose daemon start -d
+
+#/volume1/@appstore/flexget/env/bin/pip install --upgrade flexget
+
+
+templates:
+  hu:
+    thetvdb_lookup: yes
+    parsing:
+      series: guessit
+    series:
+      settings:
+        normalgroup:
+          target: 720p
+          upgrade: yes
+          propers: 12 hours
+          tracking: no
+        hdgroup:
+          quality: 720p+
+          propers: 12 hours
+          tracking: no
+
+
+      normalgroup:
+        - Community:
+            alternate_name: Balfékek
+        - Moonbeam City:
+            alternate_name: Holdfényváros
+        - Parks and Recreation:
+            alternate_name: Városfejlesztési osztály
+        - Psych:
+            alternate_name: Psych - Dilis detektívek
+        - The Mentalist:
+            alternate_name: A mentalista
+        - Six Feet Under:
+            alternate_name: Sírhant Művek
+        - The Office
+        - The White Queen:
+            alternate_name: A fehér királyné
+        - Túlélési praktikák:
+            alternate_name: Doomsday Preppers
+
+
+      hdgroup:
+        - Adventure Time:
+           alternate_name: Kalandra fel!
+        - Anger Management:
+            alternate_name: Nyugi, Charlie
+        - Archer (2009):
+            alternate_name: Archer
+        - Arrow:
+            alternate_name: Zöld íjász
+        - Ash vs Evil Dead
+        - Awkward:
+            alternate_name: Kínos
+        - Bates Motel
+        - Black Sails:
+            alternate_name: Fekete vitorlák
+        - Bones:
+            alternate_name: Dr. Csont
+        - Breaking Bad:
+            alternate_name: Totál Szívás
+        - Brickleberry
+        - Cougar Town:
+            alternate_name: Született szinglik
+        - Da Vincis Demons:
+            alternate_name: Da Vinci démonai
+        - Defiance:
+            alternate_name: Az ellenállás városa
+        - Downton Abbey
+        - Egynyari kaland:
+            alternate_name: Egynyári kaland
+        - Sherlock es Watson:
+            alternate_name: Elementary
+        - Falling Skies:
+            alternate_name: Éghasadás
+        - Family Guy:
+            alternate_name: Családos Csávó
+        - Fear the Walking Dead
+        - Fringe:
+            alternate_name: A rejtély
+        - From Dusk Till Dawn:
+            alternate_name: Alkonyattól pirkadatig
+        - Futurama
+        - Glee
+        - Grimm
+        - Jimmy's Food factory:
+            alternate_name: Jimmy Lerántja a Leplet
+        - Mike and Molly:
+            alternate_name: Mike és Molly
+        - Modern Family:
+            alternate_name: Modern Család
+        - Mythbusters:
+            alternate_name: Állítólag
+        - New Girl:
+            alternate_name:
+              - New Girl - Új lány
+              - Új Csaj
+        - Nikita
+        - Once Upon a Time (2011)
+        - Rabbids Invasion:
+            alternate_name: Rabbids - Invázió
+        - The Good Wife:
+            alternate_name: A férjem védelmében
+        - The Grinder: 
+            alternate_name: Jogászok ásza
+        - The Whispers:
+            alternate_name: Suttogók
+        - Scorpion
+        - Silicon Valley:
+            alternate_name: Szilícium-völgy
+        - Shameless:
+            alternate_name: Shameless - Szégyentelenek
+        - Elementary:
+            alternate_name: Sherlock és Watson
+        - Showder Klub
+        - Sons of Anarchy:
+            alternate_name: Kemény motorosok
+        - Suburgatory:
+            alternate_name: A kondom el van vetve
+        - Switched at Birth:
+            alternate_name: Elcserélt lányok
+        - The Cleveland Show
+        - The Middle:
+            alternate_name: A semmi közepén
+        - The Paradise:
+            alternate_name: Hölgyek öröme
+        - The Shannara Chronicles:
+            alternate_name: Shannara - A jövő krónikája
+        - Transporter:
+            alternate_name: A szállító
+        - Two and a Half Men:
+            alternate_name: Két pasi - meg egy kicsi 
+        - Wayward Pines
+        - We Bare Bears:
+            alternate_name: Medvetesók
+    regexp:
+      reject:
+        - complete
+        - megapack
+        - fullpack
+        - Sorozat.*Eng
+        - Android
+        - batch
+
+
+
+
+  en:
+    thetvdb_lookup: yes
+    parsing:
+      series: guessit
+    series:
+      settings:
+        eng:
+          quality: 720p+
+          propers: 12 hours
+      eng:
+        - 2 Broke Girls
+        - American Horror Story
+        - Brooklyn Nine Nine
+        - Dominion
+        - Enlisted
+        - Family Guy
+        - Game Of Thrones
+        - Grandfathered
+        - Growing Up Fisher
+        - Heroes Reborn
+        - How I Met Your Mother
+        - Lucifer
+        - Penny Dreadful
+        - Sense8
+        - Sleepy Hollow
+        - South Park
+        - Supergirl
+        - Supernatural
+        - Teen Wolf
+        - The 100
+        - The Big Bang Theory
+        - The Last Ship
+        - The Legend of Korra
+        - The Tomorrow People US
+        - The Walking Dead
+        - True Blood
+        - Vikings
+    regexp:
+      reject:
+        - complete
+        - megapack
+        - fullpack
+        - dubbed
+        - german
+        - Sorozat.*Hun
+        - Android
+        - batch
+
+
+
+
+  ja:
+    thetvdb_lookup: yes
+#    parsing:
+#      series: guessit
+    series:
+      settings:
+        jap:
+          quality: 720p+
+          propers: 12 hours
+          identified_by: auto
+          tracking: no
+      jap:
+        - Arslan Senki:
+            from_group: HorribleSubs
+        - Comet Lucifer:
+            from_group: HorribleSubs
+        - DanMachi:
+            from_group: HorribleSubs
+        - Dragon Ball Super:
+            from_group: Naruto-Kun.Hu
+        - Fairy Tail:
+            from_group: Naruto-Kun.Hu
+        - GATE:
+            from_group: HorribleSubs
+        - Naruto Shippuuden:
+            from_group: Naruto-Kun.Hu
+        - PSYCHO-PASS:
+            from_group: HorribleSubs
+        - Rokka no Yuusha:
+            from_group: HorribleSubs
+        - The Seven Deadly Sins:
+            alternate_name: Nanatsu no Taizai
+            from_group: Naruto-Kun.Hu
+    regexp:
+      reject:
+        - complete
+        - megapack
+        - fullpack
+        - german
+        - Android
+        - batch
+
+
+
+
+
+
+
+
+
+
+  huja:
+    series:
+      settings:
+        hujap:
+          propers: 12 hours
+          identified_by: auto
+          tracking: no
+      hujap:
+
+        - One-Punch Man
+    regexp:
+      reject:
+        - complete
+        - megapack
+        - fullpack
+        - german
+        - Android
+        - batch
+
+
+
+
+
+
+
+
+
+
+tasks:
+  Ncore_HU:
+    priority: 10
+    headers:
+      Cookie: '{{ secrets.NC.cookie }}'
+    rss: '{{ secrets.NC.rss }}'
+    verify_ssl_certificates: no
+    template: hu
+    thetvdb_lookup: yes
+    set:
+      content_filename: '{{ secrets.Rename }}'
+      rename_like_files: yes
+    transmission:
+      host: '{{ secrets.Transmission.host }}'
+      port: 9091
+      username: '{{ secrets.Transmission.username }}'
+      password: '{{ secrets.Transmission.password }}'
+
+
+  Ncore_EN:
+    priority: 20
+    headers:
+      Cookie: '{{ secrets.NC.cookie }}'
+    rss: '{{ secrets.NC.rss }}'
+    verify_ssl_certificates: no
+    template: en
+    transmission:
+      host: '{{ secrets.Transmission.host }}'
+      port: 9091
+      username: '{{ secrets.Transmission.username }}'
+      password: '{{ secrets.Transmission.password }}'
+
+
+
+
+
+  Morning_Show:
+    priority: 30
+    headers:
+      Cookie: '{{ secrets.NC.cookie }}'
+    rss: '{{ secrets.NC.rss }}'
+    verify_ssl_certificates: no
+    regexp:
+      accept:
+        - Class.*FM.*Morning.*Show
+    transmission:
+      host: '{{ secrets.Transmission.host }}'
+      port: 9091
+      username: '{{ secrets.Transmission.username }}'
+      password: '{{ secrets.Transmission.password }}'
+      path: /volume1/Downloads/!Zene/Morning Show/
+
+
+
+
+
+  Anime:
+    priority: 40
+    rss: '{{ secrets.Anime.rss }}'
+    verify_ssl_certificates: no
+    template: ja
+    thetvdb_lookup: yes
+    set:
+      content_filename: '{{ secrets.Rename }}'
+      rename_like_files: yes
+    transmission:
+      host: '{{ secrets.Transmission.host }}'
+      port: 9091
+      username: '{{ secrets.Transmission.username }}'
+      password: '{{ secrets.Transmission.password }}'
+      path: '{{ secrets.Anime.path }}'
+
+
+
+
+
+
+
+
+
+  Uraharashop:
+    priority: 50
+    headers:
+      Cookie: '{{ secrets.Uraharashop.Cookie }}'
+    rss: '{{ secrets.Uraharashop.rss }}'
+    template: huja
+    thetvdb_lookup: yes
+    set:
+      content_filename: '{{ secrets.Rename }}'
+      rename_like_files: yes
+    manual: yes
+    manipulate:
+      - url:
+          replace:
+            regexp: '^.*\?id=([0-9]+).*'
+            format: 'http://tracker.uraharashop.hu/download.php?torrent=\1'
+    transmission:
+      host: '{{ secrets.Transmission.host }}'
+      port: 9091
+      username: '{{ secrets.Transmission.username }}'
+      password: '{{ secrets.Transmission.password }}'
+      path: '{{ secrets.Anime.path }}'
+
+
+
+
+
+  Bithumen_RSS:
+    priority: 60
+    rss: '{{ secrets.BH_RSS.rss }}'
+    accept_all: yes
+    transmission:
+      host: '{{ secrets.Transmission.host }}'
+      port: 9091
+      username: '{{ secrets.Transmission.username }}'
+      password: '{{ secrets.Transmission.password }}'
+
+
+
+
+
+
+
+ 
+schedules:
+  - tasks: [Ncore_HU, Ncore_EN, Morning_Show, Anime]
+    schedule:
+      minute: 10,30,50
